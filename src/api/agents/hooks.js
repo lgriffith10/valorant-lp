@@ -10,7 +10,7 @@ export const useGetAgents = () => {
   const fetchAgent = async () => {
     if (!agents.length) { 
       const response = await axios.get(
-        `https://valorant-api.com/v1/agents?isPlatyableCharacter=true`
+        `https://valorant-api.com/v1/agents?isPlayableCharacter=true`
       );
   
       if (response && response.data) setAgents(response.data);

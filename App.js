@@ -8,10 +8,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator()
 
 export default function App() {
+  const removeHeader = [
+    'Home'
+  ]
+
   return (
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          headerShown: removeHeader.includes(route.name) ? false : true,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             if (route.name === 'Home') {
