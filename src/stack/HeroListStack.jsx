@@ -1,8 +1,11 @@
+// Components
 import { HeroListScreen } from '../screens';
+import { HeroDetailsScreen } from '../screens';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// Functions
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const HeroListStack = () => {
     return (
@@ -13,6 +16,7 @@ const HeroListStack = () => {
             }}
         >
             <Stack.Screen name="HeroList" component={HeroListScreen} />
+            <Stack.Screen name="HeroDetails" component={HeroDetailsScreen} />
         </Stack.Navigator>
     )
 }
