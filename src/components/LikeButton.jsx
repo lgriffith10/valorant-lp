@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { Pressable, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, View } from 'react-native';
 
 const LikeButton = ({ agent }) => {
     const setAgentLiked = (agent) => {
@@ -8,13 +8,13 @@ const LikeButton = ({ agent }) => {
     } 
 
     return (
-        <View style={styles.container}>
-            <Pressable onPress={() => setAgentLiked(agent)}>
-                <View style={styles.containerContent}>
-                    <Ionicons name="heart" size={30} color="white" />
-                </View>
-            </Pressable>
-        </View>
+        <TouchableOpacity onPress={() => setAgentLiked(agent)}>
+            <View style={styles.container}>
+                    <View style={styles.containerContent}>
+                        <Ionicons name="heart" size={30} color="white" />
+                    </View>
+            </View>
+        </TouchableOpacity>
     )
 }
 

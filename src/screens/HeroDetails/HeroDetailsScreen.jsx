@@ -4,7 +4,7 @@ import {
     Image,
     Text 
 } from 'react-native';
-import { GoBackButton, LikeButton} from '../../components';
+import { GoBackButton, LikeButton, SoundButton } from '../../components';
 
 import { useGetAgentByUuid } from '../../api/agents/hooks';
 
@@ -26,18 +26,27 @@ const HeroDetailsScreen = ({ navigation, route }) => {
                 />
                 <View style={styles.content}>
                     <View>
-                        <Text style={{
-                            fontSize: 32,
-                            fontWeight: 'bold',
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
                         }}>
-                            {agent.displayName}
-                        </Text>
+                            <Text style={{
+                                fontSize: 32,
+                                fontWeight: 'bold',
+                            }}>
+                                {agent.displayName}
+                            </Text>
+                            {agent.voiceLine.mediaList[0] && (
+                                <SoundButton soundUrl={agent.voiceLine.mediaList[0].wave} />
+                            )}
+                        </View>
                         <View 
                             style={{ 
                                 flexDirection: 'row', 
                                 alignItems: 'center',
                                 marginTop: 10,
-                                width: 300,
+                                width: 330,
                             }}
                         >
                             <View style={styles.roleIconContainer}>
