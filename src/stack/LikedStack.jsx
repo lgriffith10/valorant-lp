@@ -1,4 +1,4 @@
-import { HeroDetailsScreen, LikedHeroesScreen } from '../screens';
+import { LikedHeroesScreen, HeroDetailsScreen } from '../screens';
 
 // Functions
 import { createStackNavigator } from '@react-navigation/stack';

@@ -7,5 +7,5 @@ export {
     HomeScreen,
     HeroListScreen,
     HeroDetailsScreen,
-    LikedHeroesScreen
+    LikedHeroesScreen,
 }

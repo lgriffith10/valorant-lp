@@ -2,8 +2,8 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 
 import { useGetAgentByUuid } from '../api/agents/hooks'; 
 
-const HeroCard = (props) => {
-    const { agent } = useGetAgentByUuid(props.uuid);
+const HeroCard = ({ route, uuid }) => {
+    const { agent } = useGetAgentByUuid(uuid);
 
     if (agent) {
         return (

@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LikedHeroesScreen = ({ navigation }) => {
     const [agents, setAgents] = useState([]);
+
     
     const likedAgents = async () => {
         try {
@@ -29,8 +30,8 @@ const LikedHeroesScreen = ({ navigation }) => {
                 <FlatList
                     data={agents}
                     renderItem={({ item }) => 
-                        <Pressable onPress={() => navigation.navigate('HeroDetails', { uuid: item })}>
-                            <HeroCard uuid={item} />
+                        <Pressable onPress={() => navigation.navigate('LikedHeroDetail', { uuid: item })}>
+                            <HeroCard uuid={item} route={navigation} />
                         </Pressable>
                     }
                     keyExtractor={item => item}
