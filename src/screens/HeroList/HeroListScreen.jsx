@@ -12,7 +12,6 @@ const HeroListScreen = ({ navigation }) => {
     const [pagination, setPagination] = useState(0);
     const [paginatedAgents, setPaginatedAgents] = useState([]);
 
-
     const { agents } = useGetAgents();
 
     useEffect(() => {
@@ -20,12 +19,14 @@ const HeroListScreen = ({ navigation }) => {
     }, [])
 
     useEffect(() => {
-        console.log(pagination)
-        if (!agents.data[pagination - 1])
-            setPaginatedAgents(agents)
+        
+        if(pagination && agents.data) {
+            if (!agents.data[pagination - 1])
+                setPaginatedAgents(agents)
+        }
 
-        setPaginatedAgents(agents.data.slice(0, pagination))
-    }, [pagination])
+        setPaginatedAgents(agents.data ?agents.data.slice(0, pagination) : [])
+    }, [pagination, agents])
 
     return (
         <View style={styles.container}>

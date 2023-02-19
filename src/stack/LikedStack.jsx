@@ -1,9 +1,22 @@
-import { Text } from 'react-native';
+import { HeroDetailsScreen, LikedHeroesScreen } from '../screens';
 
-const LikedStack = () => {
+// Functions
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+const HeroListStack = () => {
     return (
-        <Text>test</Text>
+        <Stack.Navigator
+            initialRouteName="LikedHeroes"
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name="LikedHeroes" component={LikedHeroesScreen} />
+            <Stack.Screen name="LikedHeroDetail" component={HeroDetailsScreen} />
+        </Stack.Navigator>
     )
 }
 
-export default LikedStack;
+export default HeroListStack;
